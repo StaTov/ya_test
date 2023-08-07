@@ -21,13 +21,10 @@ const DiskApi = () => {
     }
 
     const handleUploadAll = async () => {
-        // Проверка на наличие файлов
-        if (!files || files.length < 1) {
-            setNote('Добавьте файлы.')
-            return;
-        }
+       
         try {
             setIsLoading(true)
+            
             const existFiles = await uploadAll(files)
 
             // Проверка существующих файлов 
@@ -46,7 +43,7 @@ const DiskApi = () => {
             }
             setNote('Все файлы успешно загружены.')
         } catch (error) {
-            setNote(`Что-то пошло не так ${error.message}`)
+            setNote(error.message)
             console.log(error)
         } finally {
             aRef.current.value = null;

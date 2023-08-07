@@ -4,6 +4,7 @@
     flex-direction: column;
     max-width: 100vw;
     min-height: 100vh;
+    overflow: hidden;
     background-color: #5691d5;
     background: linear-gradient(282deg, #009dff 0%, #54bdff);
 }
@@ -135,11 +136,10 @@ button:-webkit-details-marker {
 }
 
 .notification_container {
-    background-color: #d6efff;
+    background-color: #030a0e;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 600px;
     width: 500px;
     max-width: 80vw;
     height: max-content;
@@ -151,13 +151,14 @@ button:-webkit-details-marker {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    color: #fff;
     opacity: 1;
     transition: 0.4s opacity;
 }
 
 @media screen and (max-width: 601px) {
     .notification_container {
-        width: 80%;
+        width: 80vw;
     }
 }
 
@@ -165,7 +166,7 @@ button:-webkit-details-marker {
     font-weight: bold;
     font-size: 15px;
     display: block;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     transition: 0.3s;
 }
@@ -209,7 +210,7 @@ button:-webkit-details-marker {
 }
 
 .box {
-    margin: 30px 0;
+    margin: 30px 30px;
     max-width: 500px;
     width: 100%;
     background-color: #fff;

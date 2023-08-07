@@ -1,11 +1,11 @@
 
 export const yandexInit = (setToken) => {
     return window.YaAuthSuggest.init({
-        client_id: 'f95e552af1594dd585f6ec1aca8cc1f3',
+        client_id: '6aca6dec88d8442ea6c17e9604731b74',
         response_type: 'token',
-        redirect_uri: 'https://dazzling-raindrop-0c8ca0.netlify.app/empty'
+        redirect_uri: 'http://localhost:3000/empty'
     },
-        'https://dazzling-raindrop-0c8ca0.netlify.app', {
+        'http://localhost:3000/', {
         view: 'button',
         parentId: 'yaBtn',
         buttonView: 'main',
@@ -19,7 +19,8 @@ export const yandexInit = (setToken) => {
         })
         .then(function (data) {
             localStorage.setItem('access_token', data.access_token)
-            setToken(data.access_token);
+            setToken(data.access_token)
+            
         })
         .catch(function (error) {
             console.log('Что-то пошло не так: ', error);

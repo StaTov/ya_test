@@ -1,10 +1,11 @@
-import { Outlet} from "react-router-dom"
-
+import { Outlet } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Nav = ({ setToken, token }) => {
-  
-
-    const handleClick = () => {
+   
+    const navigate = useNavigate()
+    const handleLogin = () => navigate('/auth')
+    const handleLogout = () => {
         localStorage.removeItem('access_token')
         setToken(null)
     }
@@ -15,7 +16,11 @@ const Nav = ({ setToken, token }) => {
                 <div style={{ width: '40px' }}></div>
                 <div>Yandex Disk API</div>
                 <div style={{ minWidth: '40px' }}>
-                    {token && <button onClick={handleClick}>logout</button>}
+                    {
+                        token
+                            ? <button onClick={handleLogout}>logout</button>
+                            : <button onClick={handleLogin}>login</button>
+                    }
                 </div>
             </nav>
             <Outlet />
